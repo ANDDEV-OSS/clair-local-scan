@@ -1,6 +1,6 @@
-ARG  VERSION=latest
+ARG  VERSION=4.7.4
 
-FROM quay.io/coreos/clair:${VERSION} as src
+FROM quay.io/projectquay/clair:${VERSION} as src
 
 FROM scratch
 COPY --from=src / /
