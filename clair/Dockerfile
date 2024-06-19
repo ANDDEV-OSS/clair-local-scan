@@ -8,6 +8,6 @@ COPY config.yaml /config/config.yaml
 COPY gitconfig /etc/gitconfig
 
 # Copied from the original image
-EXPOSE 6060 6061
-ENTRYPOINT [ "/clair" ]
-CMD ["-config=/config/config.yaml"]
+EXPOSE 8080 8081
+ENTRYPOINT ["/bin/clair"]
+CMD ["-mode", "combo", "-conf", "/config/config.yaml"]
